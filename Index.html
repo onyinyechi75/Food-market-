@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshDirect | Bulk Food Stuffs</title>
+    <style>
+        :root {
+            --primary: #2d6a4f;
+            --secondary: #ff9f1c;
+            --light: #f8f9fa;
+            --dark: #1b4332;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light);
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero h1 { font-size: 2.8rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.2rem; margin-bottom: 25px; max-width: 600px; }
+
+        /* Store Grid */
+        .container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .product-card:hover { transform: translateY(-5px); border-color: var(--primary); }
+
+        .product-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .price {
+            font-size: 1.4rem;
+            color: var(--primary);
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        /* Order Form Styling */
+        .order-section {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-top: 60px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-top: 5px solid var(--primary);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label { font-weight: bold; display: block; margin-bottom: 5px; color: var(--dark); }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .btn-order {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 18px;
+            font-size: 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-order:hover { background: var(--dark); }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: var(--dark);
+            color: white;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">FreshDirect Market</div>
+        <div>
+            <a href="#store" style="text-decoration:none; color:var(--dark); margin-right:20px; font-weight:500;">Products</a>
+            <a href="#order" style="text-decoration:none; color:var(--primary); font-weight:bold;">Order Now</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Quality Food Stuffs, Delivered.</h1>
+        <p>Providing essential bulk food items like Rice, Oil, and Noodles at competitive prices.</p>
+        <a href="#order" style="background:var(--secondary); color:white; padding:15px 35px; text-decoration:none; border-radius:50px; font-weight:bold; font-size: 1.1rem;">Place An Order</a>
+    </section>
+
+    <div class="container" id="store">
+        <h2 style="text-align:center; color:var(--dark); margin-bottom:40px;">Current Price List</h2>
+        <div class="grid">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400" alt="Rice">
+                <h3>Bag of Rice</h3>
+                <p class="price">₦45,000</p>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400" alt="Oil">
+                <h3>Groundnut Oil</h3>
+                <p class="price">₦38,000</p>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1614735241165-6756e1df61ab?w=400" alt="Pasta">
+                <h3>Spaghetti (Carton)</h3>
+                <p class="price">₦15,500</p>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1590779033100-9f60a05a013d?w=400" alt="Tomatoes">
+                <h3>Tomato Basket</h3>
+                <p class="price">₦12,000</p>
+            </div>
+        </div>
+
+        <div class="order-section" id="order">
+            <h2 style="text-align:center; margin-bottom:5px;">Customer Order Form</h2>
+            <p style="text-align:center; color:#666; margin-bottom:30px;">Complete the form and we will call you to confirm delivery.</p>
+            
+            <form action="https://formspree.io/f/mgolvyoj" method="POST">
+                <div class="form-group">
+                    <label>Your Full Name</label>
+                    <input type="text" name="Customer Name" required placeholder="Enter name">
+                </div>
+                <div class="form-group">
+                    <label>Your Phone Number</label>
+                    <input type="tel" name="Phone" required placeholder="Enter phone number">
+                </div>
+                <div class="form-group">
+                    <label>Select Item(s)</label>
+                    <select name="Product Ordered" required>
+                        <option value="">-- Choose an item --</option>
+                        <option value="Rice (Bag)">Rice (Bag)</option>
+                        <option value="Beans">Beans</option>
+                        <option value="Tomato Basket">Tomato Basket</option>
+                        <option value="Groundnut Oil">Groundnut Oil</option>
+                        <option value="Palm Oil">Palm Oil</option>
+                        <option value="Cassava Flakes (Garri)">Cassava Flakes (Garri)</option>
+                        <option value="Spaghetti (Carton)">Spaghetti (Carton)</option>
+                        <option value="Noodles (Carton)">Noodles (Carton)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Quantity</label>
+                    <input type="number" name="Quantity" required min="1" value="1">
+                </div>
+                <div class="form-group">
+                    <label>Delivery Address</label>
+                    <textarea name="Address" rows="3" required placeholder="Full house/shop address"></textarea>
+                </div>
+
+                <input type="hidden" name="_subject" value="New Food Order Received!">
+                
+                <button type="submit" class="btn-order">Submit Order via Email</button>
+            </form>
+        </div>
+    </div>
+
+    <a href="https://wa.me/2349112322932" class="whatsapp-float" target="_blank">
+        <span>Chat on WhatsApp</span>
+    </a>
+
+    <footer>
+        <p>&copy; 2026 FreshDirect Market | Contact: 09112322932</p>
+        <p style="font-size: 13px; opacity: 0.7;">Email: amahmark679@gmail.com</p>
+    </footer>
+
+</body>
+</html>
